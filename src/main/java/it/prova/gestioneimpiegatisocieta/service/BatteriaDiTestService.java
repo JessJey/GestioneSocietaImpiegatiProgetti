@@ -127,9 +127,6 @@ public class BatteriaDiTestService {
 		Societa inserimentoSocieta = new Societa("PlayStation", new Date());
 		societaService.inserisciNuovo(inserimentoSocieta);
 
-		Societa cercaSocieta = new Societa("PlayStation");
-		societaService.inserisciNuovo(cercaSocieta);
-
 		Impiegato impiegatoDaAgg = new Impiegato("Alfi", "ser", new Date(), 7400, inserimentoSocieta);
 		impiegatoService.inserisciNuovo(impiegatoDaAgg);
 
@@ -141,9 +138,12 @@ public class BatteriaDiTestService {
 		impiegatoDaAgg.setProgetti(listaProgettiVari);
 		impiegatoService.aggiorna(impiegatoDaAgg);
 
-		if (progettoService.cercaClientiSocieta(societaService.findByExample(cercaSocieta)).size() != 1)
+		List<Progetto> listap= progettoService.cercaClientiSocieta(inserimentoSocieta.getId());
+		
+		if (listap.size() != 1)
 			throw new RuntimeException("test CERCA CLIENTI..failed: inserimento fallito");
 
+		listap.forEach(p -> System.out.println(p.getCliente()));
 		System.out.println("TEST CERCA CLIENTI DA SOCIETA PASSATO");
 
 	}
@@ -223,11 +223,11 @@ public class BatteriaDiTestService {
 		impiegatoService.aggiorna(impiegatoDaAgg2);
 		impiegatoService.aggiorna(impiegatoDaAgg);
 		
-		Impiegato impiegatoVecchio = impiegatoService.cercaImpiegatoVecchioProgettoSeiMesiSocieta1990();
+		List<Impiegato> impiegatoVecchio = impiegatoService.cercaImpiegatoVecchioProgettoSeiMesiSocieta1990();
 		
-		if(impiegatoVecchio.getNome() != "Mari")
-			throw new RuntimeException("test CERCA IMPIEGATO VECCHIO ..failed: inserimento fallito");
-			
+		
+		impiegatoVecchio.forEach(p -> System.out.println(p.getNome()));
+		
 		System.out.println("TEST IMPIEGATO VECCHIO PASSATO.....");
 		
 	}

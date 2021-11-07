@@ -29,10 +29,10 @@ public class GestioneimpiegatisocietaApplication implements CommandLineRunner {
 		batteriaDiTestService.testInserimentoImpiegato();
 		batteriaDiTestService.testInserimentoProgetto();
 		batteriaDiTestService.testCollegamentoImpiegatoAPiuProgetti();
-		//batteriaDiTestService.testCercaClientiSocieta();
+		batteriaDiTestService.testCercaClientiSocieta();
 		batteriaDiTestService.testCercaNomeSocietaConProgettiDurata1annoPiu();
 		batteriaDiTestService.testCercaProgettiConImpiegatiRalMaggioreDi30000();
-		//batteriaDiTestService.testCercaImpiegatoVecchioProgPiuSeiMesiSocieta1990();
+		batteriaDiTestService.testCercaImpiegatoVecchioProgPiuSeiMesiSocieta1990();
 		
 
 		System.out.println("################ FINE   #################");

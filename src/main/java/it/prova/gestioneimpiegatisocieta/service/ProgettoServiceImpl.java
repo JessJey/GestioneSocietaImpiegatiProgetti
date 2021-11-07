@@ -55,9 +55,8 @@ public class ProgettoServiceImpl implements ProgettoService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public List<String> cercaClientiSocieta(List<Societa> societa) {
-		//return progettoRepository.findClientiDiSocieta(societa);
-		return null;
+	public List<Progetto> cercaClientiSocieta(Long id) {
+		return progettoRepository.findClientiDiSocieta(id);
 		
 	}
 

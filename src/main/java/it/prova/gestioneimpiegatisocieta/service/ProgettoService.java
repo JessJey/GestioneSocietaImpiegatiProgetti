@@ -17,7 +17,7 @@ public interface ProgettoService {
 
 	public void rimuovi(Progetto progettoInstance);
 	
-	public List<String> cercaClientiSocieta(List<Societa> list);
+	public List<Progetto> cercaClientiSocieta(Long id);
 	
 	public List<Progetto> cercaProgettiLavoratoreRal(int input);
 }

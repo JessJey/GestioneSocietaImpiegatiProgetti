@@ -49,7 +49,7 @@ public class ImpiegatoServiceImpl implements ImpiegatoService {
 	}
 	@Override
 	@Transactional(readOnly = true)
-	public Impiegato cercaImpiegatoVecchioProgettoSeiMesiSocieta1990() {
+	public List<Impiegato> cercaImpiegatoVecchioProgettoSeiMesiSocieta1990() {
 		return impiegatoRepository.findImpiegatoVecchioConProgettoSuperioreASeiMesieSocietaFondataPrimaDel1990();
 		
 	}

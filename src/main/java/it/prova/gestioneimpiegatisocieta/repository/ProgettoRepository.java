@@ -14,9 +14,8 @@ import it.prova.gestioneimpiegatisocieta.model.Societa;
 public interface ProgettoRepository extends CrudRepository<Progetto, Long>,QueryByExampleExecutor <Progetto> {
 
 	
-	@Query("select p.cliente from Progetto p join p.impiegati i join i.societa s where s like ?1% ")
-	List<String> findClientiDiSocieta(List<Societa> societa);
-	
+	@Query("select distinct p from Societa s join s.impiegati i join i.progetti p where s.id = ?1 ")
+	List<Progetto> findClientiDiSocieta(Long id);
 	@EntityGraph(attributePaths = { "impiegati" })
 	List<Progetto> findAllDistinctByImpiegati_RalGreaterThan(int input);
 }

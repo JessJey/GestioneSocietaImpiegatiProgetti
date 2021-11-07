@@ -17,5 +17,5 @@ public interface ImpiegatoService {
 
 	public void rimuovi(Impiegato impiegatoInstance);
 	
-	public Impiegato cercaImpiegatoVecchioProgettoSeiMesiSocieta1990();
+	public List<Impiegato> cercaImpiegatoVecchioProgettoSeiMesiSocieta1990();
 }
