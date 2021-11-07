@@ -223,10 +223,10 @@ public class BatteriaDiTestService {
 		impiegatoService.aggiorna(impiegatoDaAgg2);
 		impiegatoService.aggiorna(impiegatoDaAgg);
 		
-		List<Impiegato> impiegatoVecchio = impiegatoService.cercaImpiegatoVecchioProgettoSeiMesiSocieta1990();
+		Impiegato impiegatoVecchio = impiegatoService.cercaImpiegatoVecchioProgettoSeiMesiSocieta1990().get(0);
 		
 		
-		impiegatoVecchio.forEach(p -> System.out.println(p.getNome()));
+		System.out.println(impiegatoVecchio.toString());
 		
 		System.out.println("TEST IMPIEGATO VECCHIO PASSATO.....");
 		
